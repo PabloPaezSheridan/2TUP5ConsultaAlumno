@@ -475,3 +475,23 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/2TUP5ConsultaAlumnoAPI/ConsultaAlumnos.db-shm
+/2TUP5ConsultaAlumnoAPI/ConsultaAlumnos.db-wal
+/2TUP5ConsultaAlumnoAPI/bin/Debug/net6.0/2TUP5ConsultaAlumnoAPI.deps.json
+/2TUP5ConsultaAlumnoAPI/bin/Debug/net6.0/2TUP5ConsultaAlumnoAPI.dll
+/2TUP5ConsultaAlumnoAPI/bin/Debug/net6.0/appsettings.json
+/2TUP5ConsultaAlumnoAPI/bin/Debug/net6.0/2TUP5ConsultaAlumnoAPI.pdb
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/ref/2TUP5ConsultaAlumnoAPI.dll
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/refint/2TUP5ConsultaAlumnoAPI.dll
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/2TUP5ConsultaAlumnoAPI.assets.cache
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/2TUP5ConsultaAlumnoAPI.csproj.AssemblyReference.cache
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/2TUP5ConsultaAlumnoAPI.csproj.FileListAbsolute.txt
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/2TUP5ConsultaAlumnoAPI.dll
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/2TUP5ConsultaAlumnoAPI.csproj.CoreCompileInputs.cache
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/2TUP5ConsultaAlumnoAPI.pdb
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/2TUP5ConsultaAlumnoAPI.GeneratedMSBuildEditorConfig.editorconfig
+/2TUP5ConsultaAlumnoAPI/obj/Debug/net6.0/2TUP5ConsultaAlumnoAPI.genruntimeconfig.cache
+/2TUP5ConsultaAlumnoAPI/obj/2TUP5ConsultaAlumnoAPI.csproj.nuget.dgspec.json
+/2TUP5ConsultaAlumnoAPI/obj/2TUP5ConsultaAlumnoAPI.csproj.nuget.g.props
+/2TUP5ConsultaAlumnoAPI/obj/project.nuget.cache
+/2TUP5ConsultaAlumnoAPI/obj/project.assets.json
