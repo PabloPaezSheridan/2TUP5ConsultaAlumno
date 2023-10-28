@@ -14,5 +14,7 @@ namespace _2TUP5ConsultaAlumnoAPI.Controllers
             _studentService = studentService;
         }
 
+
+
     }
 }
