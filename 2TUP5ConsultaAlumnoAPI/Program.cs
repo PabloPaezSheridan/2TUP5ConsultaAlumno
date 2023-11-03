@@ -1,6 +1,7 @@
 using _2TUP5ConsultaAlumnoAPI.Data;
 using _2TUP5ConsultaAlumnoAPI.Services.Implementations;
 using _2TUP5ConsultaAlumnoAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -40,7 +41,8 @@ builder.Services.AddDbContext<ConsultaContext>(dbContextOptions => dbContextOpti
 
 # region Inyecccion de dependencias
 builder.Services.AddScoped<IProfessorService, ProfessorService>();
-builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IUserService, UserService>();
 #endregion
 
 

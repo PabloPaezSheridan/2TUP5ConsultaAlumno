@@ -4,6 +4,7 @@ namespace _2TUP5ConsultaAlumnoAPI.Services.Interfaces
 {
     public interface IProfessorService
     {
-        public List<Professor> GetAll();
+        //public List<Professor> GetAll();
+        public List<User> GetProfessors();
     }
 }

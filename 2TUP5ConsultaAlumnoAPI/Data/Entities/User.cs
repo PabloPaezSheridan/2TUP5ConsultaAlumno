@@ -15,5 +15,7 @@ namespace _2TUP5ConsultaAlumnoAPI.Data.Entities
         [Required]
         public string UserName { get; set; }
         public string UserType { get; set; }
+
+        public bool State { get; set; } = true;
     }
 }

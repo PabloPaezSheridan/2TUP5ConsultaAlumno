@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _2TUP5ConsultaAlumnoAPI.Data;
 
@@ -10,9 +11,11 @@ using _2TUP5ConsultaAlumnoAPI.Data;
 namespace _2TUP5ConsultaAlumnoAPI.Migrations
 {
     [DbContext(typeof(ConsultaContext))]
-    partial class ConsultaContextModelSnapshot : ModelSnapshot
+    [Migration("20231103010134_StateforUserTable")]
+    partial class StateforUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.12");

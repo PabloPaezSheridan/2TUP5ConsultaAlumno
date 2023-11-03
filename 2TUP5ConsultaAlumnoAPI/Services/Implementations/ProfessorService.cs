@@ -13,9 +13,15 @@ namespace _2TUP5ConsultaAlumnoAPI.Services.Implementations
             _context = context;
         }
 
-        public List<Professor> GetAll()
+        //public List<Professor> GetAll()
+        //{
+        //    return _context.Professors.ToList();
+        //}
+
+        public List<User> GetProfessors()
         {
-            return _context.Professors.ToList();
+            return _context.Users.Where(p => p.UserType == "Professor").ToList();
         }
+
     }
 }
