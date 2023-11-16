@@ -8,6 +8,7 @@ namespace _2TUP5ConsultaAlumnoAPI.Services.Interfaces
 
         public BaseResponse ValidarUsuario(string username, string password);
         public User? GetUserByEmail(string username);
+        public User? GetUserById(int id);
         public int CreateUser(User user);
         public void UpdateUser(User user);
         public void DeleteUser(int userId);

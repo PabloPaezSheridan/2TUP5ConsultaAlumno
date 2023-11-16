@@ -43,6 +43,7 @@ builder.Services.AddDbContext<ConsultaContext>(dbContextOptions => dbContextOpti
 builder.Services.AddScoped<IProfessorService, ProfessorService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IResponseService, ResponseService>();
 #endregion
 
 

@@ -108,6 +108,39 @@ namespace _2TUP5ConsultaAlumnoAPI.Data
                         }
                     ));
 
+
+            modelBuilder.Entity<Subject>()
+               .HasMany(su => su.Students)
+               .WithMany(st => st.SubjectsAttended)
+               .UsingEntity(j => j
+                   .ToTable("StudentsSubjectsAttended"));
+                   //.HasData(new[]
+                   //    {
+                   //                     new { StudentsId = 1, SubjectsAttendedId = 1},
+                   //                     new { StudentsId = 2, SubjectsAttendedId = 1},
+                   //    }
+                   //));
+
+            modelBuilder.Entity<Question>()
+            .HasMany(q => q.Responses)
+            .WithOne(r => r.Question)
+            .HasForeignKey(r => r.QuestionId);
+
+            modelBuilder.Entity<Question>()
+                .HasOne(q => q.Student)
+                .WithMany(s => s.Questions)
+                .HasForeignKey(q => q.CreatorStudentId);
+
+            modelBuilder.Entity<Question>()
+                .HasOne(q => q.AssignedProfessor)
+                .WithMany(p => p.Questions)
+                .HasForeignKey(q => q.ProfessorId);
+
+            modelBuilder.Entity<Response>()
+                .HasOne(r => r.Creator)
+                .WithMany()
+                .HasForeignKey(r => r.CreatorId);
+
             base.OnModelCreating(modelBuilder);
         }
     }

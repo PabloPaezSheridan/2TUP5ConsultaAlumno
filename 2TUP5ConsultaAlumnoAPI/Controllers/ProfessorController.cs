@@ -74,15 +74,62 @@ namespace _2TUP5ConsultaAlumnoAPI.Controllers
             return Forbid();
         }
 
-
-        [HttpDelete]
-        public IActionResult DeleteProfessor()
+        [HttpPut("{id}")]
+        public IActionResult UpdateProfessorState([FromRoute] int id)
         {
-            int id = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
-            _userService.DeleteUser(id);
-            return NoContent();
+
+            string role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role).Value;
+
+            if (role == "Professor")
+            {
+
+                User? user = _userService.GetUserById(id);
+
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                user.State = true;
+
+
+
+                _userService.UpdateUser(user);
+
+                return Ok();
+            }
+            return Forbid();
         }
 
+        //[HttpDelete]
+        //public IActionResult DeleteProfessor()
+        //{
+        //    int id = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+        //    _userService.DeleteUser(id);
+        //    return NoContent();
+        //}
+
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public IActionResult DeleteUser([FromRoute] int id)
+        {
+            try
+            {
+                var userRole = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+                if (userRole != "Admin")
+                {
+                    return Forbid();
+                }
+
+                _userService.DeleteUser(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
 
         //[HttpGet]
@@ -111,5 +158,41 @@ namespace _2TUP5ConsultaAlumnoAPI.Controllers
         }
 
 
+        [HttpGet("id")]
+        public IActionResult GetUserById(int id)
+        {
+
+            try
+            {
+                var userRole = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+                if (userRole != "Admin")
+                {
+                    return Forbid();
+                }
+
+                User? user = _userService.GetUserById(id);
+
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(user);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+
+
     }
+
+
+
+
 }
+

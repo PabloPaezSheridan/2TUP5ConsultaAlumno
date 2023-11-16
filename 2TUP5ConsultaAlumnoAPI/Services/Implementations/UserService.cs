@@ -20,10 +20,21 @@ namespace _2TUP5ConsultaAlumnoAPI.Services.Implementations
         {
             return _consultaContext.Users.SingleOrDefault(u => u.Email == email);
         }
+
+        public User? GetUserById(int id)
+        {
+            return _consultaContext.Users.SingleOrDefault(u => u.Id == id);
+        }
+
         public BaseResponse ValidarUsuario(string email, string password)
         {
             BaseResponse response = new BaseResponse();
-            User? userForLogin = _consultaContext.Users.SingleOrDefault(u => u.Email == email);
+            //User? userForLogin = _consultaContext.Users.SingleOrDefault(u => u.Email == email);
+            User? userForLogin = GetUserByEmail(email);
+            //if (string.IsNullOrEmpty(userForLogin.UserName) || string.IsNullOrEmpty(userForLogin.Password))
+            //    return null;
+
+
             if (userForLogin != null)
             {
                 if (userForLogin.Password == password)
@@ -42,6 +53,12 @@ namespace _2TUP5ConsultaAlumnoAPI.Services.Implementations
                 response.Result = false;
                 response.Message = "wrong email";
             }
+
+            //if (userForLogin.UserType == "alumno")
+            //        return userForLogin.FirstOrDefault(p => p.UserName == userForLogin.UserName && p.Password == userForLogin.Password);
+            //    return userForLogin.FirstOrDefault(p => p.UserName == userForLogin.UserName && p.Password == userForLogin.Password);
+
+
             return response;
         }
 
